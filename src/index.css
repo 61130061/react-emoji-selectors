@@ -13,3 +13,15 @@ body {
    height: 100vh;
 }
 
+.emoji-input {
+   font-size: 40px;
+   padding: 5px;
+   background: lightblue;
+}
+
+.emoji-input:hover {
+   cursor: pointer;
+}
+
+
+

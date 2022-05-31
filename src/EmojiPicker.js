@@ -23,58 +23,77 @@ function useOnClickOutside (active, ref, callback) {
    }, [ref]);
 }
 
-function EmojiPicker ({ onClose, setOutput, closeAfterSelect=true, clickOutsideToClose=true }) {
+function EmojiPicker ({ 
+   onClose, 
+   output, 
+   darkMode=false,
+   highlight="lightblue", 
+   closeAfterSelect=true, 
+   clickOutsideToClose=true 
+}) {
+
    const [search, setSearch] = useState('');
 
    const pickerRef = useRef(null);
+   const scrollRef = useRef(null);
 
    useOnClickOutside(clickOutsideToClose, pickerRef, onClose);
 
-   const ScrollTo = (key) => {
-      document.getElementById(key).scrollIntoView();
-   }
-
-   const handleOutput = (output) => {
+   const handleOutput = (data) => {
       if (closeAfterSelect) {
-         setOutput(output);
+         output(data);
          onClose();
       } else {
-         setOutput(output);
+         output(data);
       }
    }
 
    return (
-      <div ref={pickerRef} className="emoji-picker">
-         <div className="container">
+      <div ref={pickerRef} className={darkMode ? "emoji-picker emoji-dark-mode" : "emoji-picker"}>
+         <div ref={scrollRef} className="emoji-container">
             <div className="top-bar">
-               <Input onTyping={(e) => setSearch(e.target.value)} value={search} />
+               <Input onTyping={(e) => setSearch(e.target.value)} value={search} darkMode={darkMode} />
                <div onClick={onClose}>close</div>
             </div>
             <div className="emoji-body">
                {search == '' ? 
-                     Object.keys(EmojiGroup).map((key, index) =>
-                     <div id={key} key={key} className="emoji-group">
-                        <div>{key}</div>
-                        <div className="emoji-grid">
-                           {EmojiGroup[key].map((data, index) =>
-                           <div onClick={() => handleOutput(data.emoji)} key={index}>{data.emoji}</div>
-                           )}
-                        </div>
-                     </div>
-                     ):
+                  Object.keys(EmojiGroup).map((key, index) =>
+                  <div id={key} key={key} className="emoji-group">
+                     <div>{key}</div>
                      <div className="emoji-grid">
-                        {Object.keys(EmojiList).filter(key => {
-                           if (EmojiList[key].name.includes(search.toLowerCase())) {
-                              return key
-                           }
-                        }).map((key, index) => 
-                           <div onClick={() => handleOutput(key)} key={key}>{key}</div>
+                        {EmojiGroup[key].map((data, index) =>
+                        <div 
+                           onClick={() => handleOutput(data.emoji)} 
+                           key={index}
+                           onMouseEnter={(e) => e.target.style.backgroundColor = highlight}
+                           onMouseLeave={(e) => e.target.style.backgroundColor = "transparent"}
+                        >
+                           {data.emoji}
+                        </div>
                         )}
                      </div>
+                  </div>
+                  ):
+                  <div className="emoji-grid">
+                     {Object.keys(EmojiList).filter(key => {
+                        if (EmojiList[key].name.includes(search.toLowerCase())) {
+                           return key
+                        }
+                     }).map((key, index) => 
+                        <div 
+                           onClick={() => handleOutput(key)} 
+                           key={key}
+                           onMouseEnter={(e) => e.target.style.backgroundColor = highlight}
+                           onMouseLeave={(e) => e.target.style.backgroundColor = "transparent"}
+                        >
+                           {key}
+                        </div>
+                     )}
+                  </div>
                }
             </div>
          </div>
-         <Footer ScrollTo={ScrollTo} />
+         <Footer scrollRef={scrollRef} highlight={highlight} darkMode={darkMode} />
       </div>
    )
 }

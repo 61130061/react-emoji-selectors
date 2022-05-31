@@ -8,9 +8,8 @@ body {
 .App {
    display: flex;
    flex-direction: column;
-   justify-content: center;
    align-items: center;
-   height: 100vh;
+   margin-top: 30px;
 }
 
 .emoji-input {
@@ -23,5 +22,19 @@ body {
    cursor: pointer;
 }
 
+.container {
+   display: flex;
+   width: min(90%, 900px);
+   align-items: center;
+   gap: 20px;
+}
 
+.container > :first-child {
+   display: flex;
+   justify-content: center;
+   width: 50%;
+}
 
+.container > :last-child {
+   width: 50%;
+}

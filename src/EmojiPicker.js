@@ -23,13 +23,14 @@ function useOnClickOutside (active, ref, callback) {
    }, [ref]);
 }
 
-function EmojiPicker ({ 
+export function EmojiSelector ({ 
    onClose, 
    output, 
    darkMode=false,
    highlight="lightblue", 
    closeAfterSelect=true, 
-   clickOutsideToClose=true 
+   clickOutsideToClose=true,
+   alignRight=false
 }) {
 
    const [search, setSearch] = useState('');
@@ -38,6 +39,10 @@ function EmojiPicker ({
    const scrollRef = useRef(null);
 
    useOnClickOutside(clickOutsideToClose, pickerRef, onClose);
+
+   useEffect(() => {
+      pickerRef.current.parentElement.style.position = 'relative';
+   },[]);
 
    const handleOutput = (data) => {
       if (closeAfterSelect) {
@@ -49,11 +54,15 @@ function EmojiPicker ({
    }
 
    return (
-      <div ref={pickerRef} className={darkMode ? "emoji-picker emoji-dark-mode" : "emoji-picker"}>
+      <div 
+         style={alignRight ? {right: "0"} : {left: "0"} }
+         ref={pickerRef} 
+         className={darkMode ? "emoji-picker emoji-dark-mode" : "emoji-picker"}
+      >
          <div ref={scrollRef} className="emoji-container">
             <div className="top-bar">
                <Input onTyping={(e) => setSearch(e.target.value)} value={search} darkMode={darkMode} />
-               <div onClick={onClose}>close</div>
+               <div onClick={onClose}>Close</div>
             </div>
             <div className="emoji-body">
                {search == '' ? 
@@ -97,5 +106,3 @@ function EmojiPicker ({
       </div>
    )
 }
-
-export default EmojiPicker;

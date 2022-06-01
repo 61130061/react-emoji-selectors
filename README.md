@@ -2,6 +2,10 @@
 
 Simple, ready to use, and Customable react emoji selector component for every react project.
 
+<p float="left">
+   <img src="doc/light_mode.png" width="300" />
+   <img src="doc/dark_mode.png" width="300" /> 
+</p>
 
 ## APIs
 
@@ -42,6 +46,6 @@ Change to true, if you want it darker.
 - [ ] Better search
 - [ ] Mobile version
 - [x] Light/Dark mode
-- [ ] Selector position
+- [x] Selector position
 - [ ] README.md guideline
 

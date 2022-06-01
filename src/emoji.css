@@ -4,7 +4,8 @@
    left: 50%;
    transform: translateX(-50%);
    */
-   width: min(90vw, 290px);
+   padding-top: 2px;
+   width: min(100vw, 290px);
    font-size: 13px;
    margin-top: 10px;
    border-radius: 10px;

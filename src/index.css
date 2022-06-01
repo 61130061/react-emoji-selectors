@@ -3,13 +3,23 @@
 body {
    margin: 0;
    font-family: 'Roboto', sans-serif;
+   background: #f8fafc;
+}
+
+h1 {
+   margin-bottom: 60px;
+}
+
+h2 {
+   margin: 0;
+   margin-bottom: 20px;
 }
 
 .App {
    display: flex;
    flex-direction: column;
    align-items: center;
-   margin-top: 30px;
+   padding-top: 90px;
 }
 
 .emoji-input {
@@ -24,7 +34,7 @@ body {
 
 .container {
    display: flex;
-   width: min(90%, 900px);
+   width: min(90%, 1000px);
    align-items: center;
    gap: 20px;
 }
@@ -37,4 +47,32 @@ body {
 
 .container > :last-child {
    width: 50%;
+   display: flex;
+   justify-content: center;
+   padding: 40px 0px;
+   border-radius: 10px;
+   background: #f1f5f9;
 }
+
+.container > :last-child > div {
+   display: flex;
+   flex-direction: column;
+   gap: 5px;
+}
+
+input[type=checkbox] {
+   margin-right: 10px;
+}
+
+input[type=text] {
+   margin-left: 10px;
+   padding: 5px;
+}
+
+label.true-false {
+   display: flex;
+   flex-direction: row-reverse;
+   align-items: center;
+   justify-content: start;
+}
+

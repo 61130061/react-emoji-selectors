@@ -38,7 +38,7 @@ function App () {
             {showEmoji &&
                <EmojiSelector 
                   onClose={() => setShowSelector(false)} 
-                  output={setData} 
+                  output={setOutput} 
                />
             }
 

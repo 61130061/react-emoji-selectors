@@ -31,10 +31,7 @@ function App () {
       <div className="App">
          <div>
 
-            <div 
-               className="emoji-input" 
-               onClick={() => setShowSelector(true)}
-            >
+            <div onClick={() => setShowSelector(true)}>
                Click {data}!
             </div>
 

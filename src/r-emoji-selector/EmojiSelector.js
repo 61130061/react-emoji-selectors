@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './emoji.css';
 
 import EmojiGroup from './data/emoji-group-data';
@@ -23,7 +23,7 @@ function useOnClickOutside (active, ref, callback) {
    }, [ref]);
 }
 
-export function EmojiSelector ({ 
+function EmojiSelector ({ 
    onClose, 
    output, 
    darkMode=false,
@@ -106,3 +106,6 @@ export function EmojiSelector ({
       </div>
    )
 }
+
+export default EmojiSelector;
+

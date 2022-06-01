@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { EmojiSelector } from './EmojiPicker';
+import { EmojiSelector } from './r-emoji-selector/index';
 
 function App() {
    const [showEmoji, setShowEmoji] = useState(true);
@@ -62,7 +62,6 @@ function App() {
                   </div>
                </div>
             </div>
-            
          </div>
       </div>
    );

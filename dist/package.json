@@ -1,0 +1,41 @@
+{
+   "name": "react-emoji-selectors",
+   "version": "0.1.0",
+   "description": "Simple, ready to use, and Customable react emoji selector component for every react project.",
+   "main": "index.js",
+   "scripts": {
+      "build": "babel src -d dist --copy-files",
+      "test": "echo \"Error: no test specified\" && exit 1"
+   },
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/61130061/react-emoji-selector.git"
+   },
+   "keywords": [
+      "Ract",
+      "Component",
+      "Emoji",
+      "Picker",
+      "Selector"
+   ],
+   "babel": {
+      "presets": [
+         "@babel/preset-react"
+      ]
+   },
+   "author": "Llam4u",
+   "license": "ISC",
+   "bugs": {
+      "url": "https://github.com/61130061/react-emoji-selector/issues"
+   },
+   "homepage": "https://github.com/61130061/react-emoji-selector#readme",
+   "peerDependencies": {
+      "react": "^18.1.0",
+      "react-dom": "^18.1.0"
+   },
+   "devDependencies": {
+      "@babel/cli": "^7.17.10",
+      "@babel/core": "^7.18.2",
+      "@babel/preset-react": "^7.17.12"
+   }
+}

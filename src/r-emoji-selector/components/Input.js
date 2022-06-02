@@ -1,3 +1,4 @@
+import React from 'react';
 import IconPath from '../Icon';
 
 function Input ({ onTyping, value, darkMode }) {

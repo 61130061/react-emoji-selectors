@@ -1,10 +1,10 @@
 {
    "name": "react-emoji-selectors",
-   "version": "0.1.1",
+   "version": "0.2.1",
    "description": "Simple, ready to use, and customable react emoji selector component for every react project.",
    "main": "index.js",
    "scripts": {
-      "build": "babel src -d dist --copy-files",
+      "build": "babel src -d ./ --copy-files",
       "test": "echo \"Error: no test specified\" && exit 1"
    },
    "repository": {

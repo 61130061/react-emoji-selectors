@@ -11,6 +11,7 @@ function App() {
    const [dark, setDark] = useState(false);
    const [highlight, setHighlight] = useState('lightblue');
    const [alignRight, setAlignRight] = useState(false);
+   const [backgroundColor, setBackgroundColor] = useState('');
 
    return (
       <div className="App">
@@ -28,6 +29,7 @@ function App() {
                      highlight={highlight}
                      darkMode={dark}
                      alignRight={alignRight}
+                     backgroundColor={backgroundColor}
                   />
                   }
                </div>
@@ -57,7 +59,12 @@ function App() {
                   </div>
                   <div>
                      <label>Highlight Color
-                        <input type="text" value={highlight} onChange={(e) => setHighlight(e.target.value)} />
+                        <input type="text" value={highlight} onChange={(e) => setHighlight(e.target.value)} placeholder="default" />
+                     </label>
+                  </div>
+                  <div>
+                     <label>Background Color
+                        <input type="text" value={backgroundColor} onChange={(e) => setBackgroundColor(e.target.value)} placeholder="default" />
                      </label>
                   </div>
                </div>

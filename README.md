@@ -78,6 +78,10 @@ Change color of highlight color of emoji selector.
 Change to true, if you want it darker.
 - input `boolean`
 
+### backgroundColor (default: none)
+Change background color of emoji selector container.
+- input `string (rgb or hex)`
+
 
 ## 📝 TodoList
 - [ ] Demo page

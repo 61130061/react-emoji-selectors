@@ -29,7 +29,8 @@ function EmojiSelector({
   highlight = "lightblue",
   closeAfterSelect = true,
   clickOutsideToClose = true,
-  alignRight = false
+  alignRight = false,
+  backgroundColor = ""
 }) {
   const [search, setSearch] = useState('');
   const pickerRef = useRef(null);
@@ -53,6 +54,9 @@ function EmojiSelector({
       right: "0"
     } : {
       left: "0"
+    },
+    style: {
+      backgroundColor: backgroundColor
     },
     ref: pickerRef,
     className: darkMode ? "emoji-picker emoji-dark-mode" : "emoji-picker"

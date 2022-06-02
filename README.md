@@ -60,7 +60,7 @@ Use this attribute as a function to set useState variable to close the emoji sel
 Use to get selected emoji from selector.
 You can pass function through this attribute as an example below.
 - input `function`
-- return string (emoji)
+- return `string (emoji)`
 
 ### closeAfterSelect (default: true)
 The emoji selector will close after user select an emoji when this attribute is true otherwise nothing happen.

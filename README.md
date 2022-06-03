@@ -32,7 +32,7 @@ function App () {
          <div>
 
             <div onClick={() => setShowSelector(true)}>
-               Click {data}!
+               Click {output}!
             </div>
 
             {showEmoji &&

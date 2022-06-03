@@ -32,7 +32,7 @@ function App () {
          <div>
 
             <div onClick={() => setShowSelector(true)}>
-               Click {data}!
+               Click {output}!
             </div>
 
             {showEmoji &&
@@ -52,7 +52,7 @@ function App () {
 ## 🐼 EmojiSelector Props
 
 ### onClose (default: none)
-Use this attribute as a function to set useState variable to close the emoji selector.
+Use this attribute as a function to set useState variable to hide and show the emoji selector.
 - input `function`
 - return nothing
 

@@ -56,8 +56,7 @@ function EmojiSelector ({
 
    return (
       <div 
-         style={alignRight ? {right: "0"} : {left: "0"} }
-         style={{backgroundColor: backgroundColor}}
+         style={alignRight ? {right: "0", backgroundColor: backgroundColor} : {left: "0", backgroundColor: backgroundColor} }
          ref={pickerRef} 
          className={darkMode ? "emoji-picker emoji-dark-mode" : "emoji-picker"}
       >

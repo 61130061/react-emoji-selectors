@@ -51,11 +51,10 @@ function EmojiSelector({
 
   return /*#__PURE__*/React.createElement("div", {
     style: alignRight ? {
-      right: "0"
+      right: "0",
+      backgroundColor: backgroundColor
     } : {
-      left: "0"
-    },
-    style: {
+      left: "0",
       backgroundColor: backgroundColor
     },
     ref: pickerRef,

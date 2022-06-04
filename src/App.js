@@ -14,6 +14,7 @@ function App() {
    const [highlight, setHighlight] = useState('lightblue');
    const [alignRight, setAlignRight] = useState(false);
    const [backgroundColor, setBackgroundColor] = useState('');
+   const [cornerRadius, setCornerRadius] = useState('10px');
 
    useEffect(() => {
       Prism.highlightAll();
@@ -43,6 +44,7 @@ function App() {
                      darkMode={dark}
                      alignRight={alignRight}
                      backgroundColor={backgroundColor}
+                     cornerRadius={cornerRadius}
                   />
                   }
                </div>
@@ -81,6 +83,11 @@ function App() {
                         <input type="text" value={backgroundColor} onChange={(e) => setBackgroundColor(e.target.value)} placeholder="default" />
                      </label>
                   </div>
+                  <div>
+                     <label>Corner Radius
+                        <input type="text" value={cornerRadius} onChange={(e) => setCornerRadius(e.target.value)} placeholder="default" />
+                     </label>
+                  </div>
                </div>
             </div>
          </div>
@@ -117,6 +124,9 @@ function App() {
                   </code>
                   <code className="language-javascript">
                      {backgroundColor !== '' && '\tbackgroundColor="' + backgroundColor + '"\n'}
+                  </code>
+                  <code className="language-javascript">
+                     {cornerRadius !== '10px' && '\tcornerRadius="' + cornerRadius + '"\n'}
                   </code>
                   <code className="language-javascript">
                      {'/>'}

@@ -12,7 +12,7 @@ function Footer({
   };
 
   return /*#__PURE__*/React.createElement("div", {
-    className: darkMode ? "footer emoji-dark-mode" : "footer"
+    className: darkMode ? "emoji-footer emoji-dark-mode" : "emoji-footer"
   }, /*#__PURE__*/React.createElement("div", {
     onClick: () => ScrollTo('Smileys & Emotion'),
     onMouseEnter: e => e.target.style.color = highlight,

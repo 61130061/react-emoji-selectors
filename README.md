@@ -87,6 +87,10 @@ Change to true, if you want it darker.
 Change background color of emoji selector container.
 - input `string (rgb or hex)`
 
+### cornerRadius (default: '10px')
+Change corner radius of the selector.
+- input `string`
+
 
 ## 📝 TodoList
 - [ ] Demo page

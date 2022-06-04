@@ -30,11 +30,17 @@ function EmojiSelector({
   closeAfterSelect = true,
   clickOutsideToClose = true,
   alignRight = false,
-  backgroundColor = ""
+  backgroundColor = "",
+  cornerRadius = "10px"
 }) {
   const [search, setSearch] = useState('');
   const pickerRef = useRef(null);
   const scrollRef = useRef(null);
+  const arStyle = alignRight ? {
+    right: '0'
+  } : {
+    left: '0'
+  };
   useOnClickOutside(clickOutsideToClose, pickerRef, onClose);
   useEffect(() => {
     pickerRef.current.parentElement.style.position = 'relative';
@@ -50,12 +56,13 @@ function EmojiSelector({
   };
 
   return /*#__PURE__*/React.createElement("div", {
-    style: alignRight ? {
-      right: "0",
-      backgroundColor: backgroundColor
-    } : {
-      left: "0",
-      backgroundColor: backgroundColor
+    style: { ...{
+        borderRadius: cornerRadius
+      },
+      ...{
+        backgroundColor: backgroundColor
+      },
+      ...arStyle
     },
     ref: pickerRef,
     className: darkMode ? "emoji-picker emoji-dark-mode" : "emoji-picker"

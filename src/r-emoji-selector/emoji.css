@@ -1,19 +1,17 @@
 .emoji-picker {
    z-index: 100;
    position: absolute;
-   /*
-   left: 50%;
-   transform: translateX(-50%);
-   */
    padding-top: 2px;
    width: min(100vw, 290px);
    font-size: 13px;
    margin-top: 10px;
+
    border-radius: 10px;
    background: rgb(255,255,255,0.6);
    backdrop-filter: blur(40px);
-   -webkit-box-shadow: 0px 0px 11px 0px rgba(0,0,0,0.3); 
-   box-shadow: 0px 0px 11px 0px rgba(0,0,0,0.3);
+   -webkit-box-shadow: 0px 0px 11px 0px rgba(0,0,0,0.05); 
+   box-shadow: 0px 0px 11px 0px rgba(0,0,0,0.05);
+
    /* Disable text selection */
    -webkit-touch-callout: none; /* iOS Safari */
    -webkit-user-select: none; /* Safari */
@@ -21,6 +19,7 @@
    -moz-user-select: none; /* Old versions of Firefox */
    -ms-user-select: none; /* Internet Explorer/Edge */
    user-select: none; /* Non-prefixed version */
+
 }
 
 .emoji-picker.emoji-dark-mode {

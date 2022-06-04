@@ -23,6 +23,7 @@ function useOnClickOutside (active, ref, callback) {
    }, [ref]);
 }
 
+
 function EmojiSelector ({ 
    onClose, 
    output, 
@@ -32,12 +33,14 @@ function EmojiSelector ({
    clickOutsideToClose=true,
    alignRight=false,
    backgroundColor="",
+   cornerRadius="10px",
 }) {
-
    const [search, setSearch] = useState('');
 
    const pickerRef = useRef(null);
    const scrollRef = useRef(null);
+
+   const arStyle = alignRight ? {right: '0'} : {left: '0'}
 
    useOnClickOutside(clickOutsideToClose, pickerRef, onClose);
 
@@ -56,7 +59,11 @@ function EmojiSelector ({
 
    return (
       <div 
-         style={alignRight ? {right: "0", backgroundColor: backgroundColor} : {left: "0", backgroundColor: backgroundColor} }
+         style={{ 
+            ...{borderRadius: cornerRadius}, 
+            ...{backgroundColor: backgroundColor}, 
+            ...arStyle 
+         }}
          ref={pickerRef} 
          className={darkMode ? "emoji-picker emoji-dark-mode" : "emoji-picker"}
       >

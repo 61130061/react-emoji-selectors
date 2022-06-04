@@ -6,10 +6,6 @@ body {
    background: #f8fafc;
 }
 
-h1 {
-   margin-bottom: 60px;
-}
-
 h2 {
    margin: 0;
    margin-bottom: 20px;
@@ -19,7 +15,8 @@ h2 {
    display: flex;
    flex-direction: column;
    align-items: center;
-   padding-top: 90px;
+   padding-top: 50px;
+   gap: 30px;
 }
 
 .emoji-input {
@@ -35,7 +32,6 @@ h2 {
 .container {
    display: flex;
    width: min(90%, 1000px);
-   align-items: center;
    gap: 20px;
 }
 
@@ -43,6 +39,7 @@ h2 {
    display: flex;
    justify-content: center;
    width: 50%;
+   padding: 40px 0px;
 }
 
 .container > :last-child {
@@ -76,3 +73,23 @@ label.true-false {
    justify-content: start;
 }
 
+.code-container {
+   width: min(90%, 600px);
+}
+
+.footer {
+   position: fixed;
+   bottom: 0;
+   display: flex;
+   align-items: center;
+   gap: 20px;
+}
+
+
+.footer > :first-child {
+   padding: 20px;
+}
+
+.footer > :first-child:hover {
+   cursor: pointer;
+}

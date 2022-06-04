@@ -10,7 +10,7 @@ function Footer ({ scrollRef, highlight, darkMode }) {
    }
 
    return (
-      <div className={darkMode ? "footer emoji-dark-mode" : "footer"}>
+      <div className={darkMode ? "emoji-footer emoji-dark-mode" : "emoji-footer"}>
          <div 
             onClick={() => ScrollTo('Smileys & Emotion')}
             onMouseEnter={(e) => e.target.style.color = highlight}

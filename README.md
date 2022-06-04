@@ -7,6 +7,11 @@ Simple, ready to use, and customable react emoji selector component for every re
    <img src="doc/dark_mode.png" width="300" /> 
 </p>
 
+
+## 👺 Demo 
+Try and custom your emoji selector [here](https://61130061.github.io/react-emoji-selectors/).
+
+
 ## 📒 Guideline 
 
 ### Install 💾

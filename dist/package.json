@@ -1,6 +1,6 @@
 {
    "name": "react-emoji-selectors",
-   "version": "0.2.5",
+   "version": "0.2.6",
    "description": "Simple, ready to use, and customable react emoji selector component for every react project.",
    "main": "index.js",
    "scripts": {

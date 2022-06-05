@@ -1,2 +1,3 @@
 import EmojiSelector from './EmojiSelector';
-export { EmojiSelector };
+import MEmojiSelector from './EmojiSelectorMobile';
+export { EmojiSelector, MEmojiSelector };

@@ -93,3 +93,27 @@ label.true-false {
 .footer > :first-child:hover {
    cursor: pointer;
 }
+
+.tab-container {
+   font-size: 14px;
+   display: flex;
+   align-items: center;
+   padding: 2px;
+   border-radius: 10px;
+   background: rgb(0,0,0,0.08);
+}
+
+.tab-container > div {
+   padding: 10px 15px;
+   border-radius: 10px;
+}
+
+.tab-container > div:hover {
+   cursor: pointer;
+}
+
+.tab-container > div[active=true] {
+   background: white;
+   -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.05); 
+   box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.05);
+}

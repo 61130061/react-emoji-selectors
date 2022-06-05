@@ -173,3 +173,197 @@
    cursor: pointer;
 }
 
+
+
+
+
+/*
+ * Emoji Selector Mobile version
+ *
+ */
+
+
+.emoji-mobile-picker {
+   z-index: 100;
+   position: absolute;
+   display: flex;
+   align-items: center;
+   width: 100vw;
+   height: 100vh;
+   left: 0;
+   top: 0;
+   background: rgb(0,0,0,0.4);
+   overflow: hidden;
+
+   /* Disable text selection */
+   -webkit-touch-callout: none; /* iOS Safari */
+   -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+   -moz-user-select: none; /* Old versions of Firefox */
+   -ms-user-select: none; /* Internet Explorer/Edge */
+   user-select: none; /* Non-prefixed version */
+}
+
+.emoji-mobile-picker.emoji-mobile-dark {
+   color: white;
+}
+
+.emoji-mobile-picker > div {
+   background: white;
+   margin-inline: auto;
+   width: min(100%, 500px);
+   height: fit-content;
+}
+
+.emoji-mobile-picker.emoji-mobile-dark > div {
+   background: #252525;
+}
+
+.emoji-mobile-picker > div > div:nth-child(1) {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-bottom: 1px solid rgb(0,0,0,0.1);
+}
+
+.emoji-mobile-picker.emoji-mobile-dark > div > div:nth-child(1) {
+   border-bottom: 1px solid rgb(255,255,255,0.1);
+}
+
+.emoji-mobile-picker > div > div:nth-child(1) > div {
+   flex: 1;
+   text-align: center;
+}
+
+.emoji-mobile-picker > div > div:nth-child(1) > :last-child {
+   display: flex;
+   justify-content: end;
+   color: red;
+}
+
+.emoji-mobile-picker > div > div:nth-child(1) > :last-child > div {
+   padding: 15px;
+}
+
+.emoji-mobile-picker > div > div:nth-child(1) > :last-child > div:hover {
+   cursor: pointer;
+}
+
+.emoji-mobile-category {
+   display: flex;
+   align-items: center;
+   border-bottom: 1px solid rgb(0,0,0,0.1);
+}
+
+.emoji-mobile-category.emoji-mobile-dark {
+   border-bottom: 1px solid rgb(255,255,255,0.1);
+}
+
+.emoji-mobile-category > div {
+   flex: 1;
+   padding: 10px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 25px;
+}
+
+.emoji-mobile-category.emoji-mobile-dark > div {
+   fill: rgb(255,255,255,0.8);
+}
+
+.emoji-mobile-category > div:hover {
+   cursor: pointer;
+}
+
+.emoji-mobile-picker > div > div:nth-child(3) {
+   padding: 10px;
+   border-bottom: 1px solid rgb(0,0,0,0.1);
+}
+
+.emoji-mobile-picker.emoji-mobile-dark > div > div:nth-child(3) {
+   border-bottom: 1px solid rgb(255,255,255,0.1);
+}
+
+.emoji-mobile-picker > div > div:nth-child(3) > input {
+   background: transparent;
+   margin: 0;
+   outline: none;
+   border: 0;
+   font-size: 16px;
+   width: 100%;
+}
+
+.emoji-mobile-picker.emoji-mobile-dark > div > div:nth-child(3) > input {
+   color: rgb(255,255,255,0.8);
+}
+
+.emoji-mobile-picker > div > div:nth-child(4) {
+   height: 70vh;
+   overflow-y: scroll;
+   font-weight: 300;
+}
+
+.emoji-mobile-picker.emoji-mobile-dark > div > div:nth-child(4) {
+   color: rgb(255,255,255,0.8);
+}
+
+.emoji-mobile-picker.emoji-mobile-dark > div > div:nth-child(4)::-webkit-scrollbar {
+   width: 10px;
+}
+
+.emoji-mobile-picker.emoji-mobile-dark > div > div:nth-child(4)::-webkit-scrollbar-track {
+   background: #313131;
+}
+
+.emoji-mobile-picker.emoji-mobile-dark > div > div:nth-child(4)::-webkit-scrollbar-thumb {
+   background: #202020;
+   border-radius: 10px;
+}
+
+.emoji-mobile-picker > div > div:nth-child(4) > div:first-child > div:first-child {
+   border-top: 0;
+}
+
+.emoji-mobile-picker > div > div:nth-child(4) > .emoji-group > div:first-child {
+   padding: 10px 15px;
+   padding-top: 20px;
+   background: #F7F6F3;
+   border-bottom: 1px solid rgb(0,0,0,0.05);
+   border-top: 1px solid rgb(0,0,0,0.05);
+}
+
+.emoji-mobile-picker.emoji-mobile-dark > div > div:nth-child(4) > .emoji-group > div:first-child {
+   border-bottom: 1px solid rgb(255,255,255,0.1);
+}
+
+.emoji-mobile-picker.emoji-mobile-dark > div > div:nth-child(4) > .emoji-group > div:first-child {
+   background: #202020;
+}
+
+.emoji-mobile-picker > div > div:nth-child(4) > .emoji-group > .emoji-grid {
+   grid-template-columns: repeat(auto-fill, minmax(45px, 1fr));
+   gap: 0;
+   margin: 10px 0;
+}
+
+.emoji-mobile-picker > div > div:nth-child(4) > .emoji-group > .emoji-grid > div {
+   border-radius: 10px;
+   font-size: 30px;
+   height: 45px;
+}
+
+.emoji-mobile-picker > div > div:nth-child(4) > .emoji-group > .emoji-grid > div:hover {
+   cursor: pointer;
+   background: rgb(0,0,0,0.1);
+}
+
+@media only screen and (max-width: 500px) {
+   .emoji-mobile-picker > div {
+      height: 100vh;
+   }
+
+   .emoji-mobile-picker > div > div:nth-child(4) {
+      height: 80%;
+   }
+}

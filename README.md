@@ -176,7 +176,7 @@ Change to true, if you want it darker.
 - [ ] Emoji name badge when hover
 - [x] Category tab
 - [x] Close button
-- [ ] Recently group
+- [x] Recently group
 - [ ] Clear recently emoji
 - [ ] Better search
 - [x] Mobile version

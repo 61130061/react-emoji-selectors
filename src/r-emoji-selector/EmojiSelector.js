@@ -34,18 +34,30 @@ function EmojiSelector ({
    alignRight=false,
    backgroundColor="",
    cornerRadius="10px",
+   recently=true,
+   recentlyData=null,
+   clearRecently,
 }) {
    const [search, setSearch] = useState('');
+   const [recentlyLocal, setRecentlyLocal] = useState([]);
 
    const pickerRef = useRef(null);
    const scrollRef = useRef(null);
 
-   const arStyle = alignRight ? {right: '0'} : {left: '0'}
+   const arStyle = alignRight ? {right: '0'} : {left: '0'};
 
    useOnClickOutside(clickOutsideToClose, pickerRef, onClose);
 
    useEffect(() => {
       pickerRef.current.parentElement.style.position = 'relative';
+      if (recently && !recentlyData) {
+         const items = JSON.parse(localStorage.getItem('react-emoji-selectors'));
+         if (items) {
+            setRecentlyLocal(items);
+         } else {
+            setRecentlyLocal([]);
+         }
+      }
    },[]);
 
    const handleOutput = (data) => {
@@ -54,6 +66,21 @@ function EmojiSelector ({
          onClose();
       } else {
          output(data);
+      }
+      // update recently data
+      if (recently && !recentlyData) {
+         const newArr = [...recentlyLocal];
+         if (!newArr.includes(data)) {
+            newArr.splice(0, 0, data);
+         } else {
+            newArr.splice(newArr.indexOf(data), 1);
+            newArr.splice(0, 0, data);
+         }
+         if (newArr.length > 14) {
+            newArr.splice(newArr.length-1, 1);
+         }
+         setRecentlyLocal(newArr);
+         localStorage.setItem('react-emoji-selectors', JSON.stringify(newArr));
       }
    }
 
@@ -74,23 +101,65 @@ function EmojiSelector ({
             </div>
             <div className="emoji-body">
                {search == '' ? 
-                  Object.keys(EmojiGroup).map((key, index) =>
-                  <div id={key} key={key} className="emoji-group">
-                     <div>{key}</div>
-                     <div className="emoji-grid">
-                        {EmojiGroup[key].map((data, index) =>
-                        <div 
-                           onClick={() => handleOutput(data.emoji)} 
-                           key={index}
-                           onMouseEnter={(e) => e.target.style.backgroundColor = highlight}
-                           onMouseLeave={(e) => e.target.style.backgroundColor = "transparent"}
-                        >
-                           {data.emoji}
+                  <>
+                     {recently && recentlyData ?
+                        <>
+                           {recentlyData.length > 0 &&
+                           <div id="emoji-recently" className="emoji-group">
+                              <div>Recently</div>
+                              <div className="emoji-grid">
+                                 {recentlyData.map((data, index) => 
+                                 <div 
+                                    onClick={() => handleOutput(data)} 
+                                    key={index}
+                                    onMouseEnter={(e) => e.target.style.backgroundColor = highlight}
+                                    onMouseLeave={(e) => e.target.style.backgroundColor = "transparent"}
+                                 >
+                                    {data}
+                                 </div>
+                                 )}
+                              </div>
+                           </div>
+                           }
+                        </>:
+                        <>
+                           {recentlyLocal.length > 0 &&
+                           <div id="emoji-recently" className="emoji-group">
+                              <div>Recently</div>
+                              <div className="emoji-grid">
+                                 {recentlyLocal.map((data, index) => 
+                                 <div 
+                                    onClick={() => handleOutput(data)} 
+                                    key={index}
+                                    onMouseEnter={(e) => e.target.style.backgroundColor = highlight}
+                                    onMouseLeave={(e) => e.target.style.backgroundColor = "transparent"}
+                                 >
+                                    {data}
+                                 </div>
+                                 )}
+                              </div>
+                           </div>
+                           }
+                        </>                     
+                     }
+                     {Object.keys(EmojiGroup).map((key, index) =>
+                     <div id={key} key={key} className="emoji-group">
+                        <div>{key}</div>
+                        <div className="emoji-grid">
+                           {EmojiGroup[key].map((data, index) =>
+                           <div 
+                              onClick={() => handleOutput(data.emoji)} 
+                              key={index}
+                              onMouseEnter={(e) => e.target.style.backgroundColor = highlight}
+                              onMouseLeave={(e) => e.target.style.backgroundColor = "transparent"}
+                           >
+                              {data.emoji}
+                           </div>
+                           )}
                         </div>
-                        )}
                      </div>
-                  </div>
-                  ):
+                     )}
+                  </>:
                   <div className="emoji-grid">
                      {Object.keys(EmojiList).filter(key => {
                         if (EmojiList[key].name.includes(search.toLowerCase())) {

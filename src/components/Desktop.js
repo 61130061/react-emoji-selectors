@@ -15,6 +15,7 @@ function Desktop () {
    const [alignRight, setAlignRight] = useState(false);
    const [backgroundColor, setBackgroundColor] = useState('');
    const [cornerRadius, setCornerRadius] = useState('10px');
+   const [recently, setRecently] = useState(true);
 
    useEffect(() => {
       Prism.highlightAll();
@@ -37,6 +38,7 @@ function Desktop () {
                      alignRight={alignRight}
                      backgroundColor={backgroundColor}
                      cornerRadius={cornerRadius}
+                     recently={recently}
                   />
                   }
                </div>
@@ -63,6 +65,11 @@ function Desktop () {
                   <div>
                      <label className="true-false">Dark Mode
                         <input type="checkbox" checked={dark} onChange={(e) => setDark(!dark)} />
+                     </label>
+                  </div>
+                  <div>
+                     <label className="true-false">Recently Section
+                        <input type="checkbox" checked={recently} onChange={(e) => setRecently(!recently)} />
                      </label>
                   </div>
                   <div>
@@ -110,6 +117,9 @@ function Desktop () {
                   </code>
                   <code className="language-javascript">
                      {dark && '\tdarkMode={true}\n'}
+                  </code>
+                  <code className="language-javascript">
+                     {!recently && '\trecently={false}\n'}
                   </code>
                   <code className="language-javascript">
                      {highlight !== 'lightblue' && '\thighlight="' + highlight + '"\n'}

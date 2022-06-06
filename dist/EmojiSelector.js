@@ -31,9 +31,13 @@ function EmojiSelector({
   clickOutsideToClose = true,
   alignRight = false,
   backgroundColor = "",
-  cornerRadius = "10px"
+  cornerRadius = "10px",
+  recently = true,
+  recentlyData = null,
+  clearRecently
 }) {
   const [search, setSearch] = useState('');
+  const [recentlyLocal, setRecentlyLocal] = useState([]);
   const pickerRef = useRef(null);
   const scrollRef = useRef(null);
   const arStyle = alignRight ? {
@@ -44,6 +48,16 @@ function EmojiSelector({
   useOnClickOutside(clickOutsideToClose, pickerRef, onClose);
   useEffect(() => {
     pickerRef.current.parentElement.style.position = 'relative';
+
+    if (recently && !recentlyData) {
+      const items = JSON.parse(localStorage.getItem('react-emoji-selectors'));
+
+      if (items) {
+        setRecentlyLocal(items);
+      } else {
+        setRecentlyLocal([]);
+      }
+    }
   }, []);
 
   const handleOutput = data => {
@@ -52,6 +66,25 @@ function EmojiSelector({
       onClose();
     } else {
       output(data);
+    } // update recently data
+
+
+    if (recently && !recentlyData) {
+      const newArr = [...recentlyLocal];
+
+      if (!newArr.includes(data)) {
+        newArr.splice(0, 0, data);
+      } else {
+        newArr.splice(newArr.indexOf(data), 1);
+        newArr.splice(0, 0, data);
+      }
+
+      if (newArr.length > 14) {
+        newArr.splice(newArr.length - 1, 1);
+      }
+
+      setRecentlyLocal(newArr);
+      localStorage.setItem('react-emoji-selectors', JSON.stringify(newArr));
     }
   };
 
@@ -79,7 +112,27 @@ function EmojiSelector({
     onClick: onClose
   }, "Close")), /*#__PURE__*/React.createElement("div", {
     className: "emoji-body"
-  }, search == '' ? Object.keys(EmojiGroup).map((key, index) => /*#__PURE__*/React.createElement("div", {
+  }, search == '' ? /*#__PURE__*/React.createElement(React.Fragment, null, recently && recentlyData ? /*#__PURE__*/React.createElement(React.Fragment, null, recentlyData.length > 0 && /*#__PURE__*/React.createElement("div", {
+    id: "emoji-recently",
+    className: "emoji-group"
+  }, /*#__PURE__*/React.createElement("div", null, "Recently"), /*#__PURE__*/React.createElement("div", {
+    className: "emoji-grid"
+  }, recentlyData.map((data, index) => /*#__PURE__*/React.createElement("div", {
+    onClick: () => handleOutput(data),
+    key: index,
+    onMouseEnter: e => e.target.style.backgroundColor = highlight,
+    onMouseLeave: e => e.target.style.backgroundColor = "transparent"
+  }, data))))) : /*#__PURE__*/React.createElement(React.Fragment, null, recentlyLocal.length > 0 && /*#__PURE__*/React.createElement("div", {
+    id: "emoji-recently",
+    className: "emoji-group"
+  }, /*#__PURE__*/React.createElement("div", null, "Recently"), /*#__PURE__*/React.createElement("div", {
+    className: "emoji-grid"
+  }, recentlyLocal.map((data, index) => /*#__PURE__*/React.createElement("div", {
+    onClick: () => handleOutput(data),
+    key: index,
+    onMouseEnter: e => e.target.style.backgroundColor = highlight,
+    onMouseLeave: e => e.target.style.backgroundColor = "transparent"
+  }, data))))), Object.keys(EmojiGroup).map((key, index) => /*#__PURE__*/React.createElement("div", {
     id: key,
     key: key,
     className: "emoji-group"
@@ -90,7 +143,7 @@ function EmojiSelector({
     key: index,
     onMouseEnter: e => e.target.style.backgroundColor = highlight,
     onMouseLeave: e => e.target.style.backgroundColor = "transparent"
-  }, data.emoji))))) : /*#__PURE__*/React.createElement("div", {
+  }, data.emoji)))))) : /*#__PURE__*/React.createElement("div", {
     className: "emoji-grid"
   }, Object.keys(EmojiList).filter(key => {
     if (EmojiList[key].name.includes(search.toLowerCase())) {

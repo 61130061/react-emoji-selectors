@@ -25,6 +25,8 @@ Try and custom your emoji selector [here](https://61130061.github.io/react-emoji
    - [darkMode](#darkmode-default-false)
    - [backgroundColor](#backgroundcolor-default-none)
    - [cornerRadius](#cornerradius-default-10px)
+   - [recently](#recently-default-true)
+   - [recentlyData](#recentlydata-default-null)
 - [MEmojiSelector Props (Mobile version)](#-memojiselector-props-mobile-version)
    - [onClose](#onclose-default-none-1)
    - [output](#output-default-none-1)
@@ -125,6 +127,18 @@ Change background color of emoji selector container.
 Change corner radius of the selector.
 - input `string`
 
+### recently (default: true)
+To disable recently section at the top of selector, set this to false otherwise do nothing.
+- input `boolean`
+
+### recentlyData (default: null)
+This props can be use only when `recently` props is true.
+Use this props to pass your user recently emoji data.
+By default, recently data will be collected in user's browser `localStorage` with the name of `react-emoji-selectos` (for this option no need to pass anything through this props).
+Another option, if you would like to pass your own user data, you can pass array data of emoji through this props to show in recently section.
+- input `Array` e.g. `['🦁', '🦙', '👺']`
+
+
 
 ## 📱 MEmojiSelector Props (Mobile version)
 
@@ -162,7 +176,8 @@ Change to true, if you want it darker.
 - [ ] Emoji name badge when hover
 - [x] Category tab
 - [x] Close button
-- [ ] Recenly group
+- [ ] Recently group
+- [ ] Clear recently emoji
 - [ ] Better search
 - [x] Mobile version
 - [x] Light/Dark mode

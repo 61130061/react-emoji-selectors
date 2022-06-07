@@ -27,6 +27,7 @@ Try and custom your emoji selector [here](https://61130061.github.io/react-emoji
    - [cornerRadius](#cornerradius-default-10px)
    - [recently](#recently-default-true)
    - [recentlyData](#recentlydata-default-null)
+   - [clearRecently](#clearrecently-default-none)
 - [MEmojiSelector Props (Mobile version)](#-memojiselector-props-mobile-version)
    - [onClose](#onclose-default-none-1)
    - [output](#output-default-none-1)
@@ -182,12 +183,13 @@ Change to true, if you want it darker.
 - [x] Category tab
 - [x] Close button
 - [x] Recently group
-- [ ] Clear recently emoji
+- [x] Clear recently emoji
 - [ ] Better search
 - [x] Mobile version
 - [x] Light/Dark mode
 - [x] Selector position
 - [x] README.md guideline
+- [ ] Recently section in mobile version
 
 ## Contributing
 I'm a newbiew developer so feel free to pull requiests or log issues.

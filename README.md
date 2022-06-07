@@ -27,6 +27,7 @@ Try and custom your emoji selector [here](https://61130061.github.io/react-emoji
    - [cornerRadius](#cornerradius-default-10px)
    - [recently](#recently-default-true)
    - [recentlyData](#recentlydata-default-null)
+   - [clearRecently](#clearrecently-default-none)
 - [MEmojiSelector Props (Mobile version)](#-memojiselector-props-mobile-version)
    - [onClose](#onclose-default-none-1)
    - [output](#output-default-none-1)

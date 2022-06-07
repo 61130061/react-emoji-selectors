@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/react-emoji-selectors/static/css/main.88702beb.css",
-    "main.js": "/react-emoji-selectors/static/js/main.e7f57d33.js",
+    "main.css": "/react-emoji-selectors/static/css/main.98e970e9.css",
+    "main.js": "/react-emoji-selectors/static/js/main.335c1ea1.js",
     "index.html": "/react-emoji-selectors/index.html",
-    "main.88702beb.css.map": "/react-emoji-selectors/static/css/main.88702beb.css.map",
-    "main.e7f57d33.js.map": "/react-emoji-selectors/static/js/main.e7f57d33.js.map"
+    "main.98e970e9.css.map": "/react-emoji-selectors/static/css/main.98e970e9.css.map",
+    "main.335c1ea1.js.map": "/react-emoji-selectors/static/js/main.335c1ea1.js.map"
   },
   "entrypoints": [
-    "static/css/main.88702beb.css",
-    "static/js/main.e7f57d33.js"
+    "static/css/main.98e970e9.css",
+    "static/js/main.335c1ea1.js"
   ]
 }

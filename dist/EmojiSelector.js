@@ -88,6 +88,15 @@ function EmojiSelector({
     }
   };
 
+  const handleClearRecently = () => {
+    if (clearRecently) {
+      clearRecently();
+    } else {
+      setRecentlyLocal([]);
+      localStorage.setItem('react-emoji-selectors', JSON.stringify([]));
+    }
+  };
+
   return /*#__PURE__*/React.createElement("div", {
     style: { ...{
         borderRadius: cornerRadius
@@ -115,7 +124,11 @@ function EmojiSelector({
   }, search == '' ? /*#__PURE__*/React.createElement(React.Fragment, null, recently && recentlyData ? /*#__PURE__*/React.createElement(React.Fragment, null, recentlyData.length > 0 && /*#__PURE__*/React.createElement("div", {
     id: "emoji-recently",
     className: "emoji-group"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "emoji-recently-title"
   }, /*#__PURE__*/React.createElement("div", null, "Recently"), /*#__PURE__*/React.createElement("div", {
+    onClick: handleClearRecently
+  }, "Clear")), /*#__PURE__*/React.createElement("div", {
     className: "emoji-grid"
   }, recentlyData.map((data, index) => /*#__PURE__*/React.createElement("div", {
     onClick: () => handleOutput(data),
@@ -125,7 +138,11 @@ function EmojiSelector({
   }, data))))) : /*#__PURE__*/React.createElement(React.Fragment, null, recentlyLocal.length > 0 && /*#__PURE__*/React.createElement("div", {
     id: "emoji-recently",
     className: "emoji-group"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "emoji-recently-title"
   }, /*#__PURE__*/React.createElement("div", null, "Recently"), /*#__PURE__*/React.createElement("div", {
+    onClick: handleClearRecently
+  }, "Clear")), /*#__PURE__*/React.createElement("div", {
     className: "emoji-grid"
   }, recentlyLocal.map((data, index) => /*#__PURE__*/React.createElement("div", {
     onClick: () => handleOutput(data),

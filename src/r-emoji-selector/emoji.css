@@ -115,6 +115,28 @@
    padding: 5px 0px;
 }
 
+.emoji-picker > .emoji-container > .emoji-body > .emoji-group > .emoji-recently-title {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.emoji-picker > .emoji-container > .emoji-body > .emoji-group > .emoji-recently-title > :last-child {
+   font-size: 12px;
+   font-weight: 300;
+   padding: 3px 5px;
+   border-radius: 5px;
+}
+
+.emoji-picker > .emoji-container > .emoji-body > .emoji-group > .emoji-recently-title > :last-child:hover {
+   background: rgb(0,0,0,0.1);
+   cursor: pointer;
+}
+
+.emoji-picker.emoji-dark-mode > .emoji-container > .emoji-body > .emoji-group > .emoji-recently-title > :last-child:hover {
+   background: rgb(255,255,255,0.1);
+}
+
 .emoji-search {
    display: flex;
    align-items: center;

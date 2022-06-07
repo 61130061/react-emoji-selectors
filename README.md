@@ -138,6 +138,11 @@ By default, recently data will be collected in user's browser `localStorage` wit
 Another option, if you would like to pass your own user data, you can pass array data of emoji through this props to show in recently section.
 - input `Array` e.g. `['🦁', '🦙', '👺']`
 
+### clearRecently (default: none)
+This function will be called when user click at the clear button when you use your own data in recentlyData.
+On the other hand, if you use `localStorage` (default setting) to collect recently data, you don't have to do anything.
+This function will delete data from `localStorage` by default.
+- input `function`
 
 
 ## 📱 MEmojiSelector Props (Mobile version)
@@ -177,12 +182,13 @@ Change to true, if you want it darker.
 - [x] Category tab
 - [x] Close button
 - [x] Recently group
-- [ ] Clear recently emoji
+- [x] Clear recently emoji
 - [ ] Better search
 - [x] Mobile version
 - [x] Light/Dark mode
 - [x] Selector position
 - [x] README.md guideline
+- [ ] Recently section in mobile version
 
 ## Contributing
 I'm a newbiew developer so feel free to pull requiests or log issues.

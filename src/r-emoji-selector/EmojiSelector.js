@@ -84,6 +84,15 @@ function EmojiSelector ({
       }
    }
 
+   const handleClearRecently = () => {
+      if (clearRecently) {
+         clearRecently()
+      } else {
+         setRecentlyLocal([]);
+         localStorage.setItem('react-emoji-selectors', JSON.stringify([]));
+      }
+   }
+
    return (
       <div 
          style={{ 
@@ -106,7 +115,10 @@ function EmojiSelector ({
                         <>
                            {recentlyData.length > 0 &&
                            <div id="emoji-recently" className="emoji-group">
-                              <div>Recently</div>
+                              <div className="emoji-recently-title">
+                                 <div>Recently</div>
+                                 <div onClick={handleClearRecently}>Clear</div>
+                              </div>
                               <div className="emoji-grid">
                                  {recentlyData.map((data, index) => 
                                  <div 
@@ -125,7 +137,10 @@ function EmojiSelector ({
                         <>
                            {recentlyLocal.length > 0 &&
                            <div id="emoji-recently" className="emoji-group">
-                              <div>Recently</div>
+                               <div className="emoji-recently-title">
+                                 <div>Recently</div>
+                                 <div onClick={handleClearRecently}>Clear</div>
+                              </div>
                               <div className="emoji-grid">
                                  {recentlyLocal.map((data, index) => 
                                  <div 

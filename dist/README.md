@@ -35,6 +35,10 @@ Try and custom your emoji selector [here](https://61130061.github.io/react-emoji
    - [clickOutsideToClose](#clickoutsidetoclose-default-true-1)
    - [highlihgt](#highlight-default-lightblue-1)
    - [darkMode](#darkmode-default-false-1)
+   - [recently](#recently-default-true-1)
+   - [recentlyData](#recentlydata-default-null-1)
+   - [clearRecently](#clearrecently-default-none-1)
+
 
 ## 📒 Guideline 
 
@@ -175,6 +179,23 @@ Change color of highlight color of emoji selector.
 Change to true, if you want it darker.
 - input `boolean`
 
+### recently (default: true)
+To disable recently section at the top of selector, set this to false otherwise do nothing.
+- input `boolean`
+
+### recentlyData (default: null)
+This props can be use only when `recently` props is true.
+Use this props to pass your user recently emoji data.
+By default, recently data will be collected in user's browser `localStorage` with the name of `react-emoji-selectos` (for this option no need to pass anything through this props).
+Another option, if you would like to pass your own user data, you can pass array data of emoji through this props to show in recently section.
+- input `Array` e.g. `['🦁', '🦙', '👺']`
+
+### clearRecently (default: none)
+This function will be called when user click at the clear button when you use your own data in recentlyData.
+On the other hand, if you use `localStorage` (default setting) to collect recently data, you don't have to do anything.
+This function will delete data from `localStorage` by default.
+- input `function`
+
 
 
 ## 📝 TodoList
@@ -189,7 +210,8 @@ Change to true, if you want it darker.
 - [x] Light/Dark mode
 - [x] Selector position
 - [x] README.md guideline
-- [ ] Recently section in mobile version
+- [x] Recently section in mobile version
+- [ ] Gitdoc with better guideline
 
 ## Contributing
 I'm a newbiew developer so feel free to pull requiests or log issues.

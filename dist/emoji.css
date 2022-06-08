@@ -326,6 +326,26 @@
    font-weight: 300;
 }
 
+.emoji-mobile-picker > div > div:nth-child(4) > :first-child > :first-child {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.emoji-mobile-picker > div > div:nth-child(4) > :first-child > :first-child > :last-child {
+   padding: 3px 5px;
+   border-radius: 3px;
+}
+
+.emoji-mobile-picker.emoji-mobile-dark > div > div:nth-child(4) > :first-child > :first-child > :last-child:hover {
+   background: rgb(255,255,255,0.1);
+}
+
+.emoji-mobile-picker > div > div:nth-child(4) > :first-child > :first-child > :last-child:hover {
+   cursor: pointer;
+   background: rgb(0,0,0,0.1);
+}
+
 .emoji-mobile-picker.emoji-mobile-dark > div > div:nth-child(4) {
    color: rgb(255,255,255,0.8);
 }

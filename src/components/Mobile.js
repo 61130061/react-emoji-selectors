@@ -10,6 +10,7 @@ function Mobile () {
    const [highlight, setHighlight] = useState('lightblue');
    const [dark, setDark] = useState(false);
    const [coto, setCoto] = useState(true);
+   const [recently, setRecently] = useState(true);
 
    const [cas, setCas] = useState(true);
    const [curSelect, setCurSelect] = useState('😀');
@@ -33,6 +34,7 @@ function Mobile () {
                      clickOutsideToClose={coto}
                      highlight={highlight}
                      darkMode={dark}
+                     recently={recently}
                   />
                   }
                </div>
@@ -54,6 +56,11 @@ function Mobile () {
                   <div>
                      <label className="true-false">Dark Mode
                         <input type="checkbox" checked={dark} onChange={(e) => setDark(!dark)} />
+                     </label>
+                  </div>
+                  <div>
+                     <label className="true-false">Recently
+                        <input type="checkbox" checked={recently} onChange={(e) => setRecently(!recently)} />
                      </label>
                   </div>
                   <div>

@@ -288,6 +288,7 @@
    align-items: center;
    justify-content: center;
    height: 25px;
+   fill: black;
 }
 
 .emoji-mobile-category.emoji-mobile-dark > div {
@@ -295,6 +296,7 @@
 }
 
 .emoji-mobile-category > div:hover {
+   fill: currentColor;
    cursor: pointer;
 }
 

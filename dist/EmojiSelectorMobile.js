@@ -96,6 +96,7 @@ function EmojiSelectorMobile({
     },
     onClick: onClose
   }, /*#__PURE__*/React.createElement("div", null, "Close"))), /*#__PURE__*/React.createElement(Category, {
+    highlight: highlight,
     darkMode: darkMode,
     pickerRef: pickerRef,
     scrollRef: scrollRef

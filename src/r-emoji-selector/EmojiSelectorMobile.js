@@ -93,7 +93,7 @@ function EmojiSelectorMobile ({
                <div>Emoji Selector</div>
                <div style={{color: highlight}} onClick={onClose}><div>Close</div></div>
             </div>
-            <Category darkMode={darkMode} pickerRef={pickerRef} scrollRef={scrollRef} />
+            <Category highlight={highlight} darkMode={darkMode} pickerRef={pickerRef} scrollRef={scrollRef} />
             <div>
                <input value={search} onChange={(e) => setSearch(e.target.value)} type="text" placeholder="Search" />
             </div>

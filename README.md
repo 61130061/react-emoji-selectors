@@ -199,6 +199,7 @@ This function will delete data from `localStorage` by default.
 
 
 ## 📝 TodoList
+- [ ] Fix mobile screen main when body too long
 - [x] Demo page
 - [ ] Emoji name badge when hover
 - [x] Category tab

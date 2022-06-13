@@ -20,6 +20,7 @@
    -ms-user-select: none; /* Internet Explorer/Edge */
    user-select: none; /* Non-prefixed version */
 
+   text-align: left;
 }
 
 .emoji-picker.emoji-dark-mode {
@@ -207,7 +208,7 @@
 
 .emoji-mobile-picker {
    z-index: 100;
-   position: absolute;
+   position: fixed;
    display: flex;
    align-items: center;
    width: 100vw;

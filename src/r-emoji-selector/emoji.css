@@ -208,7 +208,7 @@
 
 .emoji-mobile-picker {
    z-index: 100;
-   position: absolute;
+   position: fixed;
    display: flex;
    align-items: center;
    width: 100vw;

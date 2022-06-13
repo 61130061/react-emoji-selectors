@@ -2,25 +2,21 @@ import React from 'react';
 
 import IconPath from '../Icon';
 
-function Category ({ pickerRef, scrollRef, highlight, darkMode }) {
+function Footer ({ scrollRef, highlight, darkMode }) {
 
    const ScrollTo = (key) => {
       //document.getElementById(key).scrollIntoView();
-      if (pickerRef.current.clientWidth < 500) {
-         scrollRef.current.scrollTop = document.getElementById(key).offsetTop-140;
-      } else {
-         scrollRef.current.scrollTop = document.getElementById(key).offsetTop-210;
-      }
+      scrollRef.current.scrollTop = document.getElementById(key).offsetTop-5;
    }
 
    return (
-      <div className={darkMode ? "emoji-mobile-category emoji-mobile-dark" : "emoji-mobile-category"}>
+      <div className={darkMode ? "emoji-footer emoji-dark-mode" : "emoji-footer"}>
          <div 
             onClick={() => ScrollTo('Smileys & Emotion')}
             onMouseEnter={(e) => e.target.style.color = highlight}
             onMouseLeave={(e) => e.target.style.color = "rgb(0,0,0,0.4)"}
          >
-            <svg version="1.1" x="0px" y="0px" width="20px" height="20px" viewBox="0 0 106.059 106.06">
+            <svg version="1.1" x="0px" y="0px" width="17px" height="17px" viewBox="0 0 106.059 106.06">
                <path d={IconPath.smile} />
             </svg>
          </div>
@@ -29,7 +25,7 @@ function Category ({ pickerRef, scrollRef, highlight, darkMode }) {
             onMouseEnter={(e) => e.target.style.color = highlight}
             onMouseLeave={(e) => e.target.style.color = "rgb(0,0,0,0.4)"}
          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 16 16" version="1.1">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 16 16" version="1.1">
                <path d={IconPath.hand}/>
             </svg>
          </div>
@@ -38,7 +34,7 @@ function Category ({ pickerRef, scrollRef, highlight, darkMode }) {
             onMouseEnter={(e) => e.target.style.color = highlight}
             onMouseLeave={(e) => e.target.style.color = "rgb(0,0,0,0.4)"}
          >
-            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" viewBox="0 0 512.001 512.001" width="23px" height="23px">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" viewBox="0 0 512.001 512.001" width="20px" height="20px">
                <path d={IconPath.dog}/>
             </svg>
          </div>
@@ -47,7 +43,7 @@ function Category ({ pickerRef, scrollRef, highlight, darkMode }) {
             onMouseEnter={(e) => e.target.style.color = highlight}
             onMouseLeave={(e) => e.target.style.color = "rgb(0,0,0,0.4)"}
          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="23px" height="23px" viewBox="0 0 32 32">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 32 32">
                <path d={IconPath.pizza[0]}/>
                <path d={IconPath.pizza[1]}/>
                <path d={IconPath.pizza[2]}/>
@@ -59,7 +55,7 @@ function Category ({ pickerRef, scrollRef, highlight, darkMode }) {
             onMouseEnter={(e) => e.target.style.color = highlight}
             onMouseLeave={(e) => e.target.style.color = "rgb(0,0,0,0.4)"}
          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="23px" height="23px" viewBox="0 0 24 24">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 24 24">
                <path d={IconPath.globe}/>
             </svg>
          </div>
@@ -68,7 +64,7 @@ function Category ({ pickerRef, scrollRef, highlight, darkMode }) {
             onMouseEnter={(e) => e.target.style.color = highlight}
             onMouseLeave={(e) => e.target.style.color = "rgb(0,0,0,0.4)"}
          >
-            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" width="20px" height="20px" viewBox="0 0 390.044 390.043">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" width="17px" height="17px" viewBox="0 0 390.044 390.043">
                <path d={IconPath.basketball}/>
             </svg>
          </div>
@@ -77,7 +73,7 @@ function Category ({ pickerRef, scrollRef, highlight, darkMode }) {
             onMouseEnter={(e) => e.target.style.color = highlight}
             onMouseLeave={(e) => e.target.style.color = "rgb(0,0,0,0.4)"}
          >
-            <svg widtd="20px" height="20px" xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" viewBox="0 0 512 512">
+            <svg widtd="17px" height="17px" xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" viewBox="0 0 512 512">
                <path d={IconPath.light}/>
             </svg>
          </div>
@@ -86,7 +82,7 @@ function Category ({ pickerRef, scrollRef, highlight, darkMode }) {
             onMouseEnter={(e) => e.target.style.color = highlight}
             onMouseLeave={(e) => e.target.style.color = "rgb(0,0,0,0.4)"}
          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 20 20">
+            <svg xmlns="http://www.w3.org/2000/svg" width="19px" height="19px" viewBox="0 0 20 20">
                <path d={IconPath.lang}/>
             </svg>
          </div>
@@ -95,13 +91,12 @@ function Category ({ pickerRef, scrollRef, highlight, darkMode }) {
             onMouseEnter={(e) => e.target.style.color = highlight}
             onMouseLeave={(e) => e.target.style.color = "rgb(0,0,0,0.4)"}
          >
-            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="18px" height="18px" x="0px" y="0px" viewBox="0 0 489 489">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="16px" height="16px" x="0px" y="0px" viewBox="0 0 489 489">
                <path d={IconPath.flag}/>
             </svg>
          </div>
-
       </div>
    )
 }
 
-export default Category;
+export default Footer;
